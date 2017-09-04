@@ -35,7 +35,7 @@
 		<hr>
 
 		<h3><strong>Question 1</strong></h3>
-		<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+		<h4>Your childhood affects how you are today.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q1">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -46,7 +46,7 @@
       	</select>
 
 		<h3><strong>Question 2</strong></h3>
-		<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+		<h4>You feel you are more of a creative thinker than a logical thinker.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q2">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -58,7 +58,7 @@
 
 
 		<h3><strong>Question 3</strong></h3>
-		<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+		<h4>You feel your job should reflect your passions.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q3">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -70,7 +70,7 @@
 
 
 		<h3><strong>Question 4</strong></h3>
-		<h4>You rarely do something just out of sheer curiosity.</h4>
+		<h4>Traveling is important.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q4">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -82,7 +82,7 @@
 
 
 		<h3><strong>Question 5</strong></h3>
-		<h4>People can rarely upset you.</h4>
+		<h4>Trust is a vital part of a relationship.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q5">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -94,7 +94,7 @@
 
 
 		<h3><strong>Question 6</strong></h3>
-		<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+		<h4>First impressions mean a lot.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q6">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -106,7 +106,7 @@
 
 
 		<h3><strong>Question 7</strong></h3>
-		<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+		<h4>Religious beliefs are important to you.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q7">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -117,7 +117,7 @@
       	</select>
 
 		<h3><strong>Question 8</strong></h3>
-		<h4>You rarely get carried away by fantasies and ideas.</h4>
+		<h4>Some things just shouldn't be joked about.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q8">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -139,7 +139,7 @@
       	</select>
 
 		<h3><strong>Question 10</strong></h3>
-		<h4>You feel more energetic after spending time with a group of people.</h4>
+		<h4>Being challanged by your friends is vital to the quality of your friendship.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q10">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -159,7 +159,7 @@
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
-		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+		        <p><a href="/api/friends">API Friends List</a> | <a target="_blank"  href="https://github.com/VitBenton88/FriendFinder">GitHub Repo</a></p>
 	      </div>
 	    </footer>
 
@@ -177,7 +177,7 @@
 	      </div>
 	      <div class="modal-body">
 	        <h2 id="matchName"></h2>
-	        <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+	        <img id="matchImg" src="" alt="">
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -231,11 +231,9 @@
 	    	}
 
 
-	    	// Grab the URL of the website
-	    	var currentURL = window.location.origin;
-
 	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
+	    	$.post("/api/friends", userData,
+	    		function(data){
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#matchName").text(data.name);

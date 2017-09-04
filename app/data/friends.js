@@ -14,6 +14,22 @@ var friendsArray = [
       4,
       1
     ]
+},
+{
+  "name": "Chewbacca",
+  "photo": "https://www.themonstercompany.co.uk/shopimages/products/normal/MMS0179-Chewbacca-Blue-W.gif",
+  "scores":[
+      1,
+      2,
+      3,
+      2,
+      3,
+      4,
+      2,
+      5,
+      1,
+      1
+    ]
 }
 ];
 
