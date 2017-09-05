@@ -5,6 +5,7 @@
 
 var friendsData = require("../data/friends");
 var matchFinder = require("./matchFinder");
+var dupFinder = require("./dupFinder");
 
 // ===============================================================================
 // ROUTING
@@ -26,11 +27,19 @@ module.exports = function(app) {
 
     var newUser = req.body;
 
-    var matchIndex = matchFinder(newUser.scores, friendsData);
+    if (dupFinder(newUser)){
 
-    res.json(friendsData[matchIndex]);
+      res.json('dupFound');
 
-    friendsData.push(newUser);
+    } else{
+
+      var matchIndex = matchFinder(newUser.scores, friendsData);
+
+      res.json(friendsData[matchIndex]);
+
+      friendsData.push(newUser);
+
+      }
 
    });
 
